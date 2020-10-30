@@ -28,6 +28,33 @@ router.post('/actions/:id', (req, res) => {
     }
 })
 
+router.put("/actions/:id", (req, res)=>{
+    const changes = req.body
+    Actions.update(req.params.id, changes)
+    .then(action => {
+        if (action) {
+          res.status(200).json(action);
+        } else {
+          res.status(404).json({ message: 'The action could not be found' });
+        }
+      })
+      .catch(error => {
+        // log error to database
+        console.log(error);
+        res.status(500).json({
+          message: 'Error updating the action',
+        });
+      });
+    })
+
+
+
+
+
+
+
+
+
 
 
 

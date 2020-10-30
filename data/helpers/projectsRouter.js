@@ -17,14 +17,7 @@ router.get("/projects/:id", (req, res) => {
     })
     .catch((err) => res.status(500).json(`${err}`));
 });
-// router.get("/projects/:id", (req, res) => {
-//   projects
-//     .get(req.params.id)
-//     .then((action) => {
-//       res.status(200).json(action);
-//     })
-//     .catch((err) => res.status(500).json(`${err}`));
-// });
+
 
 router.post("/projects/", (req, res) => {
   const { name, description, completed } = req.body;
@@ -61,33 +54,6 @@ Projects.update(req.params.id, changes)
     });
   });
 })
-//     const { id } = req.params
-//     const { name, description, completed } = req.body;
-//     const indexOfProject = projects.findIndex((project) => project.id ===id)
-//   if (indexOfProject !== -1) {
-//       project[indexOfProject] = { id, name, description, completed}
-//     res.status(200).json({ id, name, description, completed });
-//   } else {
-//       res.status(400).json({ message: `No Project with id ${id}`})
-//   }
-// })
-//     const editedProject = { name, description, completed };
-//     Projects.update(id, ...editedProject)
-//       .then((data) => {
-//         res.status(201).json(data);
-//       })
-//       .catch((err) => {
-//         res.status(500).json({ message: "could not update project" });
-//       });
-//   }
-
-// })
-
-
-
-
-
-
 
 
 
